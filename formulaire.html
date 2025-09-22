@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>formulaire abonnement</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+  <!-- logo -->
+  <div class="logo">
+  <img src="logo.png" alt="logo" width="300px"></div>
+
+
+
+
+ <!-- formilaire -->
+    <h2>Formulaire d'abonnement</h2>
+  <div class="contnaire-form">
+
+  <form id="myForm">
+    
+
+    <input type="text" name="nom" placeholder="Nom" required>
+    <input type="tel" name="numero" placeholder="Numéro Mynita" required>
+ <p class="p-f">  </p>
+    <input type="number" name="code" placeholder="Numéro Reabonnement" required>
+    
+
+    <select name="choix" required>
+      <option value="">-- Choisissez un abonnement --</option>
+      <option value="BIENVENUE"> <p class="tt-choix">BIENVENUE</p></option>
+      <option value="ACCESS"> <p class="tt-choix">ACCESS</p></option>
+      <option value="EVASION"> <p class="tt-choix">EVASION</p></option>
+      <option value="ACCESS+"> <p class="tt-choix">ACCESS+</p></option>
+      <option value="TOUT CANAL+"><p class="tt-choix">TOUT CANAL+</p></option>
+      
+    </select>
+    <button class="btn-submit" type="submit">Envoyer</button>
+  </form>
+
+</div>
+
+
+
+
+<!-- canal+ image -->
+
+<div class="img">
+<img src="canal.jpg" alt="canal+" width="200px">
+</div>
+
+<!-- base donnée javascript -->
+
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbz9wOe_h_UPqIQFp0w-k9lJNYe-qaYdC_nwN2iqrBgYcQFHiUteW5KdcCCPF7S6ErKR-w/exec"; // colle l'URL ici
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      })
+      .then(res => alert("Données envoyées avec succès !"))
+      .catch(err => alert("Erreur : " + err));
+    });
+</script>
+
+
+
+</body>
+</html>

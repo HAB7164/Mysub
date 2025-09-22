@@ -1,0 +1,149 @@
+
+    *{padding: 0; margin: 0; }
+    body{
+       
+        background-color: black;
+         background-image: url(accueil.jpg);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+    }
+
+     .logo{
+  display: flex;
+    justify-content: center;
+    }
+
+    /* body { }
+    #myForm{ width:300px ; margin: 0 auto;}
+
+.contenaire-from{
+margin-top: 1000px ;
+      
+    }
+
+
+
+    form { background: #fff; padding: 20px; border-radius: 10px;  box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex;    justify-content: center; align-items: center; flex-direction: column;}
+    input, select, button { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+    button:hover { background: #45a049; } */
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    margin: 20px;
+}
+
+.contnaire-form{
+    
+
+    display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+}
+
+
+.p-f{
+  
+  
+    padding: 10px;
+ 
+}
+
+#myForm{
+    
+    border-radius: 5px;
+    background-color: white  ;
+
+    padding: 20px;
+      width: 400px ;
+    display: flex;
+   gap: 10px;
+    flex-direction: column;
+
+}
+
+input , select{
+    padding: 10px;
+    border-radius: 5PX;
+   border: 1px solid gray;
+    
+
+}
+
+
+
+.tt-choix{
+    margin: 2px;
+    text-align: center;
+}
+
+select{
+   background-color: rgb(199, 199, 199);
+    border: none;
+   
+}
+
+option{
+  
+    border-radius: 5PX;
+    
+}
+
+
+.btn-submit{
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 5px;
+    border: none;
+    width: 30%;
+    background-color: #FE9F31;
+
+
+}
+
+.btn-submit:hover{
+    transition: 1s;
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid black;
+
+}
+
+
+
+/* logo canal+ */
+.img{
+  opacity: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+
+
+@media  (max-width: 728px) {
+  
+
+    #myForm{
+  
+   
+      width: 80% ;
+   
+
+}
+
+
+
+input , select{
+    padding: 10px 0px;
+   
+}
+
+
+
+
+}
