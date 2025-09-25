@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="merci-container">
+        <div class="merci-container2">
+            <img src="logo2.png" alt="logo" width="200px">
+        <h1>Merci !</h1>
+        <p class="p">Votre abonnement a été enregistré avec succès.✅</p>
+
+        <!-- Reçu visible -->
+        <div class="recu" id="recu">
+            <h2>Reçu d'abonnement</h2>
+            <p><strong>Nom :</strong> <span id="nomClient"></span></p>
+            <p><strong>Numéro Mynita :</strong> <span id="numeroClient"></span></p>
+            <p><strong>Numéro Réabonnement :</strong> <span id="codeClient"></span></p>
+            <p><strong>Formule :</strong>   <span id="formuleClient"></span></p>
+            <p><strong>Date :</strong>   <span id="dateClient"></span></p>
+        </div>
+
+        <!-- Bouton retour accueil -->
+        <a href="index.html"><button class="btn-accueil">Retour à l’accueil</button></a>
+    </div></div>
+
+    <script>
+        // Récupérer les données depuis sessionStorage
+        const nom = sessionStorage.getItem("nom") || "N/A";
+        const numero = sessionStorage.getItem("numero") || "N/A";
+        const code = sessionStorage.getItem("code") || "N/A";
+        const formule = sessionStorage.getItem("choix") || "N/A";
+        const date = new Date().toLocaleString();
+
+        // Remplir le div reçu
+        document.getElementById("nomClient").innerText = nom;
+        document.getElementById("numeroClient").innerText = numero;
+        document.getElementById("codeClient").innerText = code;
+        document.getElementById("formuleClient").innerText = formule;
+        document.getElementById("dateClient").innerText = date;
+
+        // Fonction pour générer le PDF et l'ouvrir dans le navigateur
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFontSize(22);
+            doc.setTextColor(254, 159, 49); // orange Canal+
+            doc.text("Reçu d'abonnement", 105, 20, null, null, "center");
+
+           
+            doc.setFontSize(12);
+            doc.text("Merci pour votre abonnement !", 105, 100, null, null, "center");
+
+            // Ouvrir le PDF dans un nouvel onglet
+            window.open(doc.output('bloburl'), '_blank');
+        }
+    </script>
+
+
+
+
+<style>
+.merci-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   .merci-container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    height: 620px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+
+
+
+   }
+
+
+   .p{
+text-align: center;
+  color: black;
+
+   }
+    .recu {
+    background-color: rgba(214, 212, 212, 0.7);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.recu h2 {
+   
+    text-align: center;
+    color:#008d2f
+}
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color: #008d2f;
+}
+.recu p {
+    font-size: 13px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(73, 73, 73);
+    color: black;
+    margin: 15px 0;
+    
+}
+.btn-accueil {
+    padding: 15px 30px;
+    background-color:#008d2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
+}
+ .btn-accueil:hover {
+    background-color: transparent;
+    color: #008d2f;
+    border: 1px solid #008d2f;
+}
+</style>
+</body>
+</html>
