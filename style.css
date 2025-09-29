@@ -6,6 +6,8 @@
 }
 
 body {
+    background-attachment: fixed;
+    
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     background-color: black;
@@ -15,26 +17,16 @@ body {
     background-size: cover;
 }
 
-/* Menu */
-nav {
-    background-color: rgba(0,0,0,0.7);
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    position: sticky;
-    top: 0;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-nav a:hover {
-    color: #FE9F31;
-}
+/* texte forlilaire */
+ h2{
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+display: flex;
+
+    gap: 20px;
+ }
+
 
 /* Logo */
 .logo {
@@ -42,6 +34,12 @@ nav a:hover {
     justify-content: center;
     margin: 20px 0;
 }
+
+
+
+
+
+
 
 /* Bienvenue */
 .bienvenue {
@@ -65,6 +63,7 @@ nav a:hover {
     margin-top: 3rem;
 }
 button {
+     background-attachment: fixed;
     font-size: larger;
     border-radius: 0.5rem;
     border: none;
@@ -80,6 +79,72 @@ button:hover {
     border: 1px solid white;
 }
 
+/* les formil */
+.contnaire-formil{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 2rem;
+
+}
+
+.section-formil{
+   border-radius: 10px;
+overflow-y: scroll;
+  background-attachment: fixed;
+    margin-top: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+background-color: white;
+border: 1 solid white;
+height: 100px;
+width: 400px;
+
+}
+
+
+.formil{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 5px;
+  background-color: transparent;
+text-align: center;
+border: 1px solid #FE9F31;
+
+
+}
+
+i{
+    border-bottom : 2px solid #0e0700;
+    border-right : 2px solid #0e0700;
+
+   color: rgb(255, 255, 255);
+border-radius: 5px;
+    background-color: #FE9F31;
+    padding: 5px;
+
+}
+
+
+
+
+/* formil de la formilaire en tete */
+.i{
+    border-bottom : 2px solid #ffffff;
+    border-right : 2px solid #ffffff;
+
+   color: rgb(255, 255, 255);
+border-radius: 5px;
+    background-color: #FE9F31;
+    padding: 5px;
+
+}
+
+
+
 /* Footer */
 footer {
     background: rgba(0,0,0,0.8);
@@ -92,20 +157,21 @@ footer {
 
 /* WhatsApp flottant */
 .whatsapp-float {
+    margin: 5px;
     position: fixed;
     width: 60px;
     height: 60px;
     bottom: 20px;
     right: 20px;
-    background-color: #25D366;
-    color: white;
+    /* background-color: #ffffff;
+    color: white; */
     border-radius: 50%;
     text-align: center;
     font-size: 30px;
-    box-shadow: 2px 2px 5px #999;
+    /* box-shadow: 2px 2px 5px #999; */
     z-index: 100;
 }
-.whatsapp-float i { margin-top: 15px; }
+
 
 /* Formulaire */
 .contnaire-form { display: flex; justify-content: center; margin-top: 40px; }
@@ -147,10 +213,11 @@ option { border-radius: 5px; }
 .p-f { color: red; font-size: 14px; padding: 5px 0; text-align: center; }
 
 /* Logo Canal+ */
-.img { opacity: 70%; display: flex; justify-content: center; margin-top: 50px; }
+.img { opacity: 70%; display: flex; justify-content: center; margin-top: 50px;}
 
 
 footer{
+    font-size: 10px;
     opacity: 80%;
     position: absolute;
     bottom: 0%;
