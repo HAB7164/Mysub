@@ -24,41 +24,63 @@
                 <option value="BIENVENUE">BIENVENUE</option> 
                 <option value="ACCESS">ACCESS</option>
                 <option value="EVASION">EVASION</option> -->
-                 <option value="ACCESS+">ACCESS+........16 000f</option> 
+                 <option value="ACCESS+">ACCESS+</option> 
                 <!-- <option value="TOUT CANAL+">TOUT CANAL+</option> -->
             
             </select>
+          
+            <select name="prix" required>
+               
+                <option value="16 000f">Prix :  16 000f</option>
+               
+           </select>
+
+
             <button class="btn-submit" type="submit">Envoyer</button>
         </form>
+
+
+              <!-- Animation en attente -->
+<div id="loading" class="loading">
+  <div class="spinner"></div>
+  <p>Envoi en cours...</p>
+
     </div>
 
     <!-- Script Google Apps + stockage sessionStorage -->
     <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbz9wOe_h_UPqIQFp0w-k9lJNYe-qaYdC_nwN2iqrBgYcQFHiUteW5KdcCCPF7S6ErKR-w/exec"; 
-        const form = document.getElementById("myForm");
+  const scriptURL = "https://script.google.com/macros/s/AKfycbz9wOe_h_UPqIQFp0w-k9lJNYe-qaYdC_nwN2iqrBgYcQFHiUteW5KdcCCPF7S6ErKR-w/exec"; 
+  const form = document.getElementById("myForm");
+  const loading = document.getElementById("loading");
 
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(form));
+  form.addEventListener("submit", e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
 
-            fetch(scriptURL, {
-                method: "POST",
-                body: JSON.stringify(data)
-            })
-            .then(res => {
-                // Stocker les infos pour le reçu
-                sessionStorage.setItem("nom", data.nom);
-                sessionStorage.setItem("numero", data.numero);
-                sessionStorage.setItem("code", data.code);
-                sessionStorage.setItem("choix", data.choix);
+      // ✅ Affiche l’animation
+      loading.style.display = "flex";
 
-                // Redirection vers merci.html
-                window.location.href = "merci.html";
-            })
-            .catch(err => {
-                alert("❌ Erreur : " + err);
-            });
-        });
-    </script>
+      fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify(data)
+      })
+      .then(res => {
+          // ✅ Stocker infos pour reçu
+          sessionStorage.setItem("nom", data.nom);
+          sessionStorage.setItem("numero", data.numero);
+          sessionStorage.setItem("code", data.code);
+           sessionStorage.setItem("prix", data.prix);
+          sessionStorage.setItem("choix", data.choix);
+          
+
+          // ✅ Redirection
+          window.location.href = "merci.html";
+      })
+      .catch(err => {
+          alert("❌ Erreur : " + err);
+          loading.style.display = "none"; // cacher si erreur
+      });
+  });
+</script>
 </body>
 </html>

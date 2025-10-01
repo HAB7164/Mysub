@@ -12,53 +12,30 @@
         <img src="logo.png" alt="logo" width="200px">
     </div>
 
-    <h2>Formulaire d'abonnement</h2>
+    <h2>Selection formul </h2>
 
-    <div class="contnaire-form">
-        <form id="myForm">
-            <input type="text" name="nom" placeholder="Nom complet" required>
-            <input type="tel" name="numero" placeholder="Numéro Mynita" pattern="[0-9]{8}" required>
-            <input type="number" name="code" placeholder="Numéro Réabonnement" required>
-            <select name="choix" required>
-                <option value="">-- Choisissez un abonnement --</option>
-                <option value="BIENVENUE">BIENVENUE</option>
-                <option value="ACCESS">ACCESS</option>
-                <option value="EVASION">EVASION</option>
-                <option value="ACCESS+">ACCESS+</option>
-                <option value="TOUT CANAL+">TOUT CANAL+</option>
-            
-            </select>
-            <button class="btn-submit" type="submit">Envoyer</button>
-        </form>
-    </div>
+   
+    <!-- formil prix -->
 
-    <!-- Script Google Apps + stockage sessionStorage -->
-    <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbz9wOe_h_UPqIQFp0w-k9lJNYe-qaYdC_nwN2iqrBgYcQFHiUteW5KdcCCPF7S6ErKR-w/exec"; 
-        const form = document.getElementById("myForm");
+ <div class="contnaire-formil">
+<section class="section-formil">
+    <div class="formil">space</div>
+    <div class="formil">space</div>
+    <div class="formil">space</div>
+<a href="bienvenue.html"><div class="formil"><i>BIENVENUE</i><br><br>3 000f</div></a>
+<a href="access.html"><div  class="formil"><i>ACCESS</i><br><br>5 500f</div></a>
+<a href="evation.html"><div  class="formil"><i>EVASION</i><br><br>11 000f</div></a>
+<a href="access+.html"><div  class="formil"><i>ACCESS+</i><br><br>16 000f</div></a>
+<a href="toutcanal.html"><div  class="formil"><i>TOUTCANAL+</i><br><br>27 500f</div></a>
 
-        form.addEventListener("submit", e => {
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(form));
+</section>
+<style>
 
-            fetch(scriptURL, {
-                method: "POST",
-                body: JSON.stringify(data)
-            })
-            .then(res => {
-                // Stocker les infos pour le reçu
-                sessionStorage.setItem("nom", data.nom);
-                sessionStorage.setItem("numero", data.numero);
-                sessionStorage.setItem("code", data.code);
-                sessionStorage.setItem("choix", data.choix);
 
-                // Redirection vers merci.html
-                window.location.href = "merci.html";
-            })
-            .catch(err => {
-                alert("❌ Erreur : " + err);
-            });
-        });
-    </script>
+a{
+    text-decoration: none;
+}
+</style>
+
 </body>
 </html>

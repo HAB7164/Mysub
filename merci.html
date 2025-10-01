@@ -21,6 +21,7 @@
             <p><strong>Numéro Mynita :</strong> <span id="numeroClient"></span></p>
             <p><strong>Numéro Réabonnement :</strong> <span id="codeClient"></span></p>
             <p><strong>Formule :</strong>   <span id="formuleClient"></span></p>
+            <p><strong>Prix :</strong>   <span id="prixclient"></span></p>
             <p><strong>Date :</strong>   <span id="dateClient"></span></p>
         </div>
 
@@ -34,6 +35,8 @@
         const numero = sessionStorage.getItem("numero") || "N/A";
         const code = sessionStorage.getItem("code") || "N/A";
         const formule = sessionStorage.getItem("choix") || "N/A";
+         const prix = sessionStorage.getItem("prix") || "N/A";
+        
         const date = new Date().toLocaleString();
 
         // Remplir le div reçu
@@ -41,24 +44,11 @@
         document.getElementById("numeroClient").innerText = numero;
         document.getElementById("codeClient").innerText = code;
         document.getElementById("formuleClient").innerText = formule;
+         document.getElementById("prixclient").innerText = prix;
         document.getElementById("dateClient").innerText = date;
-
-        // Fonction pour générer le PDF et l'ouvrir dans le navigateur
-        function generatePDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-
-            doc.setFontSize(22);
-            doc.setTextColor(254, 159, 49); // orange Canal+
-            doc.text("Reçu d'abonnement", 105, 20, null, null, "center");
-
-           
-            doc.setFontSize(12);
-            doc.text("Merci pour votre abonnement !", 105, 100, null, null, "center");
-
-            // Ouvrir le PDF dans un nouvel onglet
-            window.open(doc.output('bloburl'), '_blank');
-        }
+       
+      
+        
     </script>
 
 
